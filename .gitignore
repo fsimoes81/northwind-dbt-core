@@ -1,2 +1,5 @@
-.venv
-logs
+.venv/
+dbt_packages/
+dbt_modules/
+target/
+logs/
