@@ -31,7 +31,7 @@ with prod as (
 ), fact as (
     select 
         od.*
-        ,o.order_date
+        ,cast(o.order_date as date) as order_date
         ,o.customer
         ,o.employee
         ,o.age
@@ -40,4 +40,4 @@ with prod as (
     inner join orders o
     on (od.order_id = o.order_id)
 )
-select * from fact
+select *, now() as dh_insert from fact

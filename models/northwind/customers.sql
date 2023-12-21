@@ -13,4 +13,4 @@ with markup as (
     select c.* from {{source('sources','customers')}} c  
     where customer_id in (select unique_id from unique_customers)
 )
-select * from final
+select *, now() as dh_insert from final

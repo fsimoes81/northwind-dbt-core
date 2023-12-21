@@ -6,4 +6,4 @@ with emp_calcs as (
         *
     from {{source('sources','employees')}}
 )
-select * from emp_calcs
+select *, now() as dh_insert from emp_calcs
