@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: sources
+    database: northwind_db
+    schema: public
+    tables:
+      - name: categories
+        description: "Categories of Northwind products"
+      - name: products
+      - name: suppliers
+      - name: employees
+      - name: orderdetails
+      - name: customers
+      - name: orders
+      - name: shippers

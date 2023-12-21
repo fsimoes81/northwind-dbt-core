@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: customers
+    description: "Customers' names, addresses, and phone numbers."
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: employees
+    description: "Employees' names, titles, and personal information."
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+  - name: orderdetails
+    description: "Details on products, quantities, and prices for each order in the Orders table."
+    columns:
+      - name: address
+        description: ""
+        tests:
+          - unique
+          - not_null
+      - name: city
+        description: ""
+        tests:
+          - unique
+          - not_null
+      - name: company_name
+        description: ""
+        tests:
+          - unique
+          - not_null
+      - name: contact_name
+        description: ""
+        tests:
+          - unique
+          - not_null
+      - name: contact_title
+        description: ""
+        tests:
+          - unique
+          - not_null
+      - name: country
+        description: ""
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Unique five-character code based on customer name."
+        tests:
+          - unique
+          - not_null
+      - name: fax
+        description: "Phone number includes country code or area code."
+        tests:
+          - unique
+          - not_null
+      - name: phone
+        description: "Phone number includes country code or area code."
+        tests:
+          - unique
+          - not_null
+      - name: postal_code
+        description: ""
+        tests:
+          - unique
+          - not_null
+      - name: region
+        description: "State or province."
+        tests:
+          - unique
+          - not_null     
