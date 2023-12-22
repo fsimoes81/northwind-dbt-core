@@ -1,0 +1,1 @@
+select {{ get_columns('categories') }}, now() as dh_insert from {{source('sources','categories')}}

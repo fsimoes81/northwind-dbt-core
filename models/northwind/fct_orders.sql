@@ -14,7 +14,7 @@ with prod as (
         ,od.order_id
         ,od.quantity
         ,od.discount
-    from {{ref('orderdetails')}} od
+    from {{ref('fct_orders_detail')}} od
     left join prod pd on (od.product_id = pd.product_id)
 ), orders as (
     select
@@ -25,8 +25,8 @@ with prod as (
         ,e.age
         ,e.time_of_service
     from {{source('sources','orders')}} o
-    left join {{ref('customers')}} c on (o.customer_id = c.customer_id)
-    left join {{ref('employees')}} e on (o.employee_id = e.employee_id)
+    left join {{ref('dim_customers')}} c on (o.customer_id = c.customer_id)
+    left join {{ref('dim_employees')}} e on (o.employee_id = e.employee_id)
     left join {{source('sources','shippers')}} s on (o.ship_via = s.shipper_id)
 ), fact as (
     select 

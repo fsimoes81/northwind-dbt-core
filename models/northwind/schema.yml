@@ -1,78 +1,59 @@
 version: 2
 
 models:
-  - name: customers
+  - name: dim_customers
     description: "Customers' names, addresses, and phone numbers."
     columns:
-      - name: id
+      - name: customer_id
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
 
-  - name: employees
+  - name: dim_employees
     description: "Employees' names, titles, and personal information."
     columns:
-      - name: id
+      - name: employee_id
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
-  - name: orderdetails
+  - name: fct_orders_detail
     description: "Details on products, quantities, and prices for each order in the Orders table."
     columns:
-      - name: address
+      - name: order_id
         description: ""
         tests:
-          - unique
           - not_null
-      - name: city
+      - name: product_id
         description: ""
         tests:
-          - unique
           - not_null
-      - name: company_name
+      - name: product_name
         description: ""
         tests:
-          - unique
           - not_null
-      - name: contact_name
+      - name: supplier_id
         description: ""
         tests:
-          - unique
           - not_null
-      - name: contact_title
+      - name: category_id
         description: ""
         tests:
-          - unique
           - not_null
-      - name: country
+      - name: unit_price
         description: ""
         tests:
-          - unique
           - not_null
-      - name: customer_id
-        description: "Unique five-character code based on customer name."
-        tests:
-          - unique
-          - not_null
-      - name: fax
-        description: "Phone number includes country code or area code."
-        tests:
-          - unique
-          - not_null
-      - name: phone
-        description: "Phone number includes country code or area code."
-        tests:
-          - unique
-          - not_null
-      - name: postal_code
+      - name: quantity
         description: ""
         tests:
-          - unique
           - not_null
-      - name: region
-        description: "State or province."
+      - name: total
+        description: ""
         tests:
-          - unique
-          - not_null     
+          - not_null
+      - name: discount
+        description: ""
+        tests:
+          - not_null
