@@ -22,7 +22,7 @@ models:
     description: "Details on products, quantities, and prices for each order in the Orders table."
     columns:
       - name: order_id
-        description: ""
+        description: "The primary key for this table"
         tests:
           - not_null
       - name: product_id
