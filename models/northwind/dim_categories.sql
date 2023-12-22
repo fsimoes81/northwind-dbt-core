@@ -1,8 +1,16 @@
+
 {{
     config(
         materialized='incremental',
-        unique_key='category_id'
+        unique_key='category_id',
+        incremental_strategy='delete+insert',
+        tags = ['incremental_mode']
     )
 }}
 
-select *, now() as dh_insert from {{source('sources','categories')}}
+
+select * from {{source('sources','categories')}}
+
+-- {% if is_incremental() %}
+-- where category_id > (select max(category_id) from {{ this }})
+-- {% endif %}
